@@ -1,0 +1,78 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div class="header_fixed">
+    <table>
+      <thead>
+        <tr>
+          <th>S No.</th>
+          <th>Username</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Order</th>
+          <th>Kilo</th>
+          <th>Price</th>
+          <th>Transport</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Rakhi Gupta</td>
+          <td>123 AAA, BBB CCC, DDDD</td>
+          <td>4563786387</td>
+          <td>Bòn Bon</td>
+          <td>20</td>
+          <td>50000</td>
+          <td>Yes</td>
+          <td>
+            <div class="example-button-row">
+              <button mat-button color="primary">Accept</button>
+              <button mat-button (click)="openDialog()" color="warn">Discuss</button>
+              <button mat-button color="accent">Decline</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>Anjali</td>
+          <td>123 AAA, BBB CCC, DDDD</td>
+          <td>4563786387</td>
+          <td>Bòn Bon</td>
+          <td>20</td>
+          <td>50000</td>
+          <td>Yes</td>
+          <td>
+            <div class="example-button-row">
+              <button mat-button color="primary">Accept</button>
+              <button mat-button color="warn">Discuss</button>
+              <button mat-button color="accent">Decline</button>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>Vejata Gupta</td>
+          <td>123 AAA, BBB CCC, DDDD</td>
+          <td>4563786387</td>
+          <td>Bòn Bon</td>
+          <td>20</td>
+          <td>40000</td>
+          <td>No</td>
+          <td>
+            <div class="example-button-row">
+              <button mat-button color="primary">Accept</button>
+              <button mat-button color="warn">Discuss</button>
+              <button mat-button color="accent">Decline</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
