@@ -18,7 +18,7 @@ import { AgriculturalComponent } from './agricultural/agricultural.component';
 import { HistoryComponent } from './history/history.component';
 import { SettingComponent } from './setting/setting.component';
 import {HttpClientModule} from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WeatherComponent } from './weather/weather.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
@@ -38,6 +38,7 @@ import { FarmerSettingFormComponent } from './components/farmer-setting-form/far
 import { DiscussFormComponent } from './components/discuss-form/discuss-form.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
+import { HelloComponent } from './hello/hello.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import {MatRadioModule} from '@angular/material/radio';
     DashboardCardComponent,
     FarmerSettingFormComponent,
     DiscussFormComponent,
+    HelloComponent,
   ],
   imports: [
     BrowserModule,
@@ -83,6 +85,7 @@ import {MatRadioModule} from '@angular/material/radio';
     MatDialogModule,
     MatCheckboxModule,
     MatRadioModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

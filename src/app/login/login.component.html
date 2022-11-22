@@ -4,25 +4,43 @@
 <body>
   <div class="wrapper">
     <div class="title">Login Form</div>
-    <form action="#">
+    <form name="loginForm" [formGroup]="loginForm">
       <div class="field">
-        <input type="text" required />
+        <input id="username" type="text" required formControlName="username" />
         <label>Username</label>
+        <span
+          *ngIf="
+            loginForm.controls.username?.errors?.required &&
+            loginForm.controls.username?.touched
+          "
+          >*User name is required</span
+        >
       </div>
       <div class="field">
-        <input type="password" required />
+        <input
+          id="password"
+          type="password"
+          required
+          formControlName="password"
+        />
         <label>Password</label>
-      </div>
-      <div class="content">
-        <div class="checkbox">
-          <input type="checkbox" id="remember-me" />
-          <label for="remember-me">Remember me</label>
-        </div>
+        <span
+          *ngIf="
+            loginForm.controls.password?.errors?.required &&
+            loginForm.controls.password?.touched
+          "
+          >*Password is required</span
+        >
+        <span *ngIf="loginForm.controls.password?.errors?.minlength"
+          >*Password must be at least 6 character</span
+        >
       </div>
       <div class="field">
-        <input type="submit" value="Login" />
+        <button id="submit" type="submit">Login</button>
       </div>
-      <div class="signup-link">Not a member? <a href="/register">Signup now</a></div>
+      <div class="signup-link">
+        Not a member? <a href="/register">Signup now</a>
+      </div>
     </form>
   </div>
 </body>
