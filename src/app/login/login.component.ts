@@ -32,7 +32,7 @@ export class LoginComponent {
     this.http.post(this.baseApiUrl + '/signin', this.loginForm.getRawValue(), {withCredentials: true})
 
       .subscribe((res: any) => {
-        AuthInterceptor.accessToken = res.token;
+        AuthInterceptor.accessToken = res.accessToken;
         alert('Sucessfull Login!')
         this.router.navigate(['/']);
       });
