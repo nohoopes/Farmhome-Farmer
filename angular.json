@@ -71,7 +71,8 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "admin-panel-layout:build:production"
+              "browserTarget": "admin-panel-layout:build:production",
+              "proxyConfig": "src/proxy.conf.json"
             }
           }
         },

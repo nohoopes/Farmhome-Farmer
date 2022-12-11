@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  baseApiUrl:'https://farmhome-backend.herokuapp.com/'
+  baseApiUrl:'https://backendfarmhome-production.up.railway.app'
 };
 
 /*

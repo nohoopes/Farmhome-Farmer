@@ -17,7 +17,7 @@ import { OrderComponent } from './order/order.component';
 import { AgriculturalComponent } from './agricultural/agricultural.component';
 import { HistoryComponent } from './history/history.component';
 import { SettingComponent } from './setting/setting.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { WeatherComponent } from './weather/weather.component';
 import {MatTableModule} from '@angular/material/table';
@@ -38,7 +38,7 @@ import { FarmerSettingFormComponent } from './components/farmer-setting-form/far
 import { DiscussFormComponent } from './components/discuss-form/discuss-form.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
-import { HelloComponent } from './hello/hello.component';
+import {AuthInterceptor} from './interceptors/auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -62,7 +62,6 @@ import { HelloComponent } from './hello/hello.component';
     DashboardCardComponent,
     FarmerSettingFormComponent,
     DiscussFormComponent,
-    HelloComponent,
   ],
   imports: [
     BrowserModule,
@@ -87,7 +86,11 @@ import { HelloComponent } from './hello/hello.component';
     MatRadioModule,
     ReactiveFormsModule,
   ],
-  providers: [],
+  providers: [    {
+    provide: HTTP_INTERCEPTORS,
+    useClass: AuthInterceptor,
+    multi: true
+  }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

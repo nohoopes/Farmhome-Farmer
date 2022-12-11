@@ -4,7 +4,7 @@
 <body>
   <div class="wrapper">
     <div class="title">Login Form</div>
-    <form name="loginForm" [formGroup]="loginForm">
+    <form name="loginForm" [formGroup]="loginForm" (submit)="submit()">
       <div class="field">
         <input id="username" type="text" required formControlName="username" />
         <label>Username</label>
