@@ -10,7 +10,7 @@
       <thead>
         <tr>
           <th>S No.</th>
-          <th>Username</th>
+          <th>Merchant name</th>
           <th>Address</th>
           <th>Phone</th>
           <th>Order</th>
@@ -21,54 +21,20 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>1</td>
-          <td>Rakhi Gupta</td>
-          <td>123 AAA, BBB CCC, DDDD</td>
-          <td>4563786387</td>
-          <td>Bòn Bon</td>
-          <td>20</td>
-          <td>50000</td>
-          <td>Yes</td>
+        <tr *ngFor="let o of orders let i = index">
+          <td>{{o.id}}</td>
+          <td>{{o.merchant.firstName}} {{o.merchant.lastName}}</td>
+          <td>Dĩ An, Bình Dương</td>
+          <td>{{o.merchant.phone}}</td>
+          <td>{{o.fruit.name}} </td>
+          <td>{{o.amount}}</td>
+          <td>{{o.price}}000</td>
+          <td>{{o.transport}}</td>
           <td>
             <div class="example-button-row">
-              <button mat-button color="primary">Accept</button>
+              <button type="button" mat-button color="primary" (click)="acceptOrder(o.id.toString())">Accept</button>
               <button mat-button (click)="openDialog()" color="warn">Discuss</button>
-              <button mat-button color="accent">Decline</button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Anjali</td>
-          <td>123 AAA, BBB CCC, DDDD</td>
-          <td>4563786387</td>
-          <td>Bòn Bon</td>
-          <td>20</td>
-          <td>50000</td>
-          <td>Yes</td>
-          <td>
-            <div class="example-button-row">
-              <button mat-button color="primary">Accept</button>
-              <button mat-button color="warn">Discuss</button>
-              <button mat-button color="accent">Decline</button>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Vejata Gupta</td>
-          <td>123 AAA, BBB CCC, DDDD</td>
-          <td>4563786387</td>
-          <td>Bòn Bon</td>
-          <td>20</td>
-          <td>40000</td>
-          <td>No</td>
-          <td>
-            <div class="example-button-row">
-              <button mat-button color="primary">Accept</button>
-              <button mat-button color="warn">Discuss</button>
-              <button mat-button color="accent">Decline</button>
+              <button type="button" mat-button color="accent" (click)="deleteOrder(o.id.toString())">Decline</button>
             </div>
           </td>
         </tr>

@@ -94,6 +94,19 @@ form .category label .dot {
   border: 5px solid transparent;
   transition: all 0.3s ease;
 }
+img {
+  max-width: 200px;
+  max-height: 200px;
+}
+.upload-img label {
+  width: 80px;
+  height: 30px;
+  text-align: center;
+  vertical-align: middle;
+  border: 2px solid;
+  border-radius: 5px;
+  border-color: #040d03;
+}
 #dot-1:checked ~ .category label .one,
 #dot-2:checked ~ .category label .two,
 #dot-3:checked ~ .category label .three {

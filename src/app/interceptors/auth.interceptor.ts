@@ -30,7 +30,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
         return this.http.post(this.baseApiUrl + '/signin', {}, {withCredentials: true}).pipe(
           switchMap((res: any) => {
-            AuthInterceptor.accessToken = res.token;
+            AuthInterceptor.accessToken = res.accessToken;
 
             return next.handle(request.clone({
               setHeaders: {

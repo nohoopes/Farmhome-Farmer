@@ -3,36 +3,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
+   
     <div class="cards">
-        <div class="card card1">
+        <ng-container *ngFor="let p of products let i = index">
+        <div class="card">
             <div class="container">
-                <img src="https://kenh14cdn.com/2018/12/27/photo-1-1545883965059903986606.jpg">
+                <img src={{p.images[0].url}}>
             </div>
             <div class="details">
-                <h3>Chôm Chôm</h3>
-                <p>200kg</p>
-                <button id="delete-btn" mat-button color="accent" float="right">Delete</button>
+                <h3>#{{p.id}}</h3>
+                <h3>{{p.name}}</h3>
+                <p>{{p.weight}}{{p.unit}}</p>
+                <p>{{p.season}}</p>
+                <p>{{p.date}}</p>
+                <button type="button" id="delete-btn" mat-button color="accent" float="right" (click)="deleteProduct(p.id.toString())">Delete</button>
             </div>
         </div>
-        <div class="card card2">
-            <div class="container">
-                <img src="https://traicaycaonghe.vn/wp-content/uploads/2021/05/oinuhoang6.jpg">
-            </div>
-            <div class="details">
-                <h3>Ổi Nữ Hoàng</h3>
-                <p>100kg</p>
-                <button id="delete-btn" mat-button color="accent" float="right">Delete</button>
-            </div>
-        </div>
-        <div class="card card3">
-            <div class="container">
-                <img src="https://znews-photo.zingcdn.me/w660/Uploaded/sgorvz/2015_10_13/qua_bon_bon.jpg">
-            </div>
-            <div class="details">
-                <h3>Bòn Bon Thái</h3>
-                <p>150kg</p>
-                <button id="delete-btn" mat-button color="accent" float="right">Delete</button>
-            </div>
-        </div>
+    </ng-container>
     </div>
+
 </body>

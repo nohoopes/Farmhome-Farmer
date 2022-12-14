@@ -22,6 +22,8 @@ export class LoginComponent {
     ){}
 
   ngOnInit(): void {
+    localStorage.removeItem('idUser');
+    localStorage.clear;
     this.loginForm = new FormGroup({
       username:  new FormControl (null, Validators.required),
       password: new FormControl (null, [Validators.required, Validators.minLength(6)])
@@ -33,8 +35,14 @@ export class LoginComponent {
 
       .subscribe((res: any) => {
         AuthInterceptor.accessToken = res.accessToken;
+        console.log(res.accessToken);
+        localStorage.setItem("idUser", res.idUser.toString());
         alert('Sucessfull Login!')
         this.router.navigate(['/']);
+      },
+      err => {
+        alert ('Login fail, please try again!');
+        this.router.navigate(['/login'])
       });
   }
 

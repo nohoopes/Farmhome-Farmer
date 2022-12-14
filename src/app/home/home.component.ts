@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
     this.http.get(this.baseApiUrl+'/user/profile', {withCredentials: true}).subscribe(
       (res:any) => {
         this.message = `Hi ${res.firstName} ${res.lastName} , Welcome to Farmhome!`;
+        console.log(res.id);
       },
       err => {
         alert ('You are not login, please login first');

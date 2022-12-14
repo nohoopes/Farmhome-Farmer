@@ -4,20 +4,23 @@
 	box-sizing: border-box;
 }
 body {
-	background-color: #081708;
-	height: 100vh;
 	display: grid;
 	place-items: center center;
 	font-family: 'Poppins',sans-serif;
 	border-radius: 10px;
+	background: transparent;
 }
 .cards {
 	display: flex;
-	grid-template-columns: repeat(auto-fit,minmax(200px,3fr));
-	padding: 10px;
-	grid-gap: 40px;
+    justify-content: space-between;
+    margin-left: -1rem;
+    flex-flow: row wrap;
 }
 .card {
+	flex: 1 0;
+    background-color: green;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
 	background-color: #0f221a;
 	border-radius: 20px;
 	box-shadow: 0 0 30px rgba(0,0,0,0.18);
@@ -37,13 +40,14 @@ body {
 	}
 }
 img {
-	width: 100%;
+	width: 300px;
 	height: 200px;
 	display: block;
 	background-size: cover;
 	border-radius: 20px 20px 0 0;
 }
 .details {
+	margin-left: 10px;
 	padding: 20px 10px;
 	>h3 {
 		color: #ffffff;

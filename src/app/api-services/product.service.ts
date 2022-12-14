@@ -18,12 +18,10 @@ export class ProductsService {
   }
 
   //Add Product
-  addProduct(addProductRequest: Product): Observable<Product> {
-    return this.http.post<Product>(
-      this.baseApiUrl + '/api/Product',
-      addProductRequest
-    );
+  addProduct(product: Product, fid: string) {
+    return this.http.post<Product>(this.baseApiUrl + '/admin/fruit/create', product);
   }
+
 
   //Get 1 Product
   getProduct(id: string): Observable<Product> {
