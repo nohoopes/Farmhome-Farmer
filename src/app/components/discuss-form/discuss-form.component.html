@@ -6,23 +6,23 @@
   <div class="container">
     <div class="title">Dealing</div>
     <div class="content">
-      <form action="#">
+      <form name="discussForm" [formGroup]="discussForm" (submit)="submit()">
         <div class="user-details">
           <div class="input-box">
             <span class="details">Order ID</span>
-            <input type="text" placeholder="16" required readonly/>
+            <input type="text" required formControlName="id"/>
           </div>
           <div class="input-box">
             <span class="details">Order</span>
-            <input type="text" placeholder="Măng cụt" required readonly/>
+            <input type="text" required/>
           </div>
           <div class="input-box">
             <span class="details">Deal price/kg</span>
-            <input type="text" placeholder="Confirm new price" required />
+            <input type="text" placeholder="Confirm new price" required formControlName="dealPrice" />
           </div>
           <div class="input-box">
             <span class="details"> Deal amount</span>
-            <input type="text" placeholder="Confirm new price" required />
+            <input type="text" placeholder="Confirm new price" required formControlName="dealAmount"/>
           </div>
         </div>
         <div class="button">

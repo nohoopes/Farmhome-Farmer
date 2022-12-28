@@ -41,6 +41,7 @@ export class AgriculturalCardComponent implements OnInit {
           next: (response) => {
             this.router.navigate(['agricultural']);
             alert('Delete successfully! 😀');
+            this.ngOnInit();
           },
           error: (products) => {
             console.log(products);

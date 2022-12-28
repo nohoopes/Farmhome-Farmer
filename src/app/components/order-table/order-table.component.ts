@@ -41,7 +41,7 @@ export class OrderTableComponent implements OnInit {
     let confirmAction = confirm('Do you want to accept this order?');
     if (confirmAction) {
       this.http
-        .post(this.baseApiUrl + '/order/accept' + id, {
+        .post(this.baseApiUrl + '/order/accept/' + id, {
           withCredentials: true,
         })
         .subscribe({
