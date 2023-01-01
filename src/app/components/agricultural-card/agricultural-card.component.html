@@ -13,7 +13,8 @@
             <div class="details">
                 <h3>#{{p.id}}</h3>
                 <h3>{{p.name}}</h3>
-                <p>{{p.weight}}{{p.unit}}</p>
+                <p>Having: {{p.weight}}{{p.unit}}</p>
+                <p>Remaining: {{p.remainingWeight}}{{p.unit}}</p>
                 <p>{{p.season}}</p>
                 <p>{{p.date}}</p>
                 <button type="button" id="delete-btn" mat-button color="accent" float="right" (click)="deleteProduct(p.id.toString())">Delete</button>

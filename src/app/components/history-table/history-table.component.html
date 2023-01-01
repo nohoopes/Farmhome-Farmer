@@ -1,47 +1,38 @@
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  
-  <body>
-    <div class="header_fixed">
-      <table>
-        <thead>
-          <tr>
-            <th>S No.</th>
-            <th>Username</th>
-            <th>Order</th>
-            <th>Kilo</th>
-            <th>Transport</th>
-            <th>Price/kg</th>
-            <th>Total</th>
-            <th>Date</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Rakhi Gupta</td>
-            <td>Bòn Bon</td>
-            <td>20</td>
-            <td>No</td>
-            <td>60000 VND</td>
-            <td>1200000 VND</td>
-            <td>11/11/2022</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Anjali</td>
-            <td>Ổi Nữ Hoàng</td>
-            <td>200</td>
-            <td>Yes</td>
-            <td>5000 VND</td>
-            <td>1000000 VND</td>
-            <td>6/11/2022</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </body>
-  
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <div class="header_fixed">
+    <table>
+      <thead>
+        <tr>
+          <th>S No.</th>
+          <th>Merchant name</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Order</th>
+          <th>Kilo</th>
+          <th>Price</th>
+          <th>Transport</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let o of orders.slice().reverse() let i = index">
+          <td>{{o.id}}</td>
+          <td>{{o.merchant.firstName}} {{o.merchant.lastName}}</td>
+          <td>Dĩ An, Bình Dương</td>
+          <td>{{o.merchant.phone}}</td>
+          <td>{{o.fruit.name}} </td>
+          <td>{{o.amount}}</td>
+          <td>{{o.price}}000</td>
+          <td>{{o.transport}}</td>
+          <td>{{o.date}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>

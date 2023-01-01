@@ -39,6 +39,8 @@ import { DiscussFormComponent } from './components/discuss-form/discuss-form.com
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatRadioModule} from '@angular/material/radio';
 import {AuthInterceptor} from './interceptors/auth.interceptor';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -85,6 +87,8 @@ import {AuthInterceptor} from './interceptors/auth.interceptor';
     MatCheckboxModule,
     MatRadioModule,
     ReactiveFormsModule,
+    MatProgressBarModule,
+    MatCardModule,
   ],
   providers: [    {
     provide: HTTP_INTERCEPTORS,
