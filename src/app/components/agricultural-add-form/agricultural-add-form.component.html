@@ -7,40 +7,40 @@
   <div class="container">
     <div class="title">Add Agricultural</div>
     <div class="content">
-      <form name="addProductForm">
+      <div>
         <div class="user-details">
           <div class="input-box">
             <span class="details">Name</span>
-            <input type="text" placeholder="Enter name" value = "{{p_product}}" required formControlName="name" />
+            <input type="text" placeholder="Enter name" value="{{p_product}}" required  />
           </div>
           <div class="input-box">
             <span class="details">Weight</span>
-            <input type="text" placeholder="Enter weight" required formControlName="weight" />
+            <input type="text" placeholder="Enter weight" required  />
           </div>
           <div class="input-box">
             <span class="details">Season</span>
-            <input type="text" placeholder="Spring/Summer/Autumn/Winter" required formControlName="season" />
+            <input type="text" placeholder="Spring/Summer/Autumn/Winter"  />
           </div>
 
           <div class="input-box">
             <span class="details">Date</span>
-            <input type="text" placeholder="yyyy-mm-dd" required formControlName="date" />
+            <input type="text" placeholder="yyyy-mm-dd" required (input)="changeDate($event.target.value)"  />
           </div>
-          <form [formGroup]="form" (ngSubmit)="submitForm()" style="display: flex">
+          <div>
             <div class="form-group">
               <input type="file" (change)="uploadFile($event)">
-          </div>
+            </div>
             <div class="predict-box">
               <h4>Product: {{p_product}}</h4>
               <h4>Confidence: {{p_confidence}}</h4>
-              <button mat-raised-button color="accent" type="submit">Predict</button>
+              <button mat-raised-button color="accent" (click)="predictForm()">Predict</button>
             </div>
-          </form>
+          </div>
         </div>
-        <div class="button" >
-          <input value="Submit" style="text-align:center !important"/>
+        <div class="button" (click)="addProduct()">
+          <input value="Submit" style="text-align:center !important" />
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </body>
