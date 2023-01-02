@@ -13,6 +13,10 @@ body {
   padding: 10px;
   background: linear-gradient(135deg, #012717, #040d03);
 }
+.details {
+  font-weight: 500;
+  margin-top: 5px;
+}
 #upload-img-btn {
   float: right;
   margin-top: 10px;
@@ -40,14 +44,15 @@ body {
   border-radius: 5px;
   background: linear-gradient(135deg, #012717, #040d03);
 }
-.content form .user-details {
+.content .user-details {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 20px 0 12px 0;
 }
-.form .user-details .input-box {
+ .user-details .input-box {
   margin-bottom: 15px;
+  margin-top: 10px !important;
   width: calc(100% / 2 - 20px);
 }
 .form .input-box span.details {
@@ -99,7 +104,6 @@ img {
   max-height: 200px;
 }
 .predict-box {
-  margin-left: 110px;
   h4 {
     font-size: 18px;
     margin: 30px 0;

@@ -14,6 +14,8 @@ export class AgriculturalCardComponent implements OnInit {
 
   baseApiUrl: string = environment.baseApiUrl;
 
+  size: any;
+
   products: Product[] = [];
 
   constructor(private http: HttpClient, private router: Router) {}
@@ -21,11 +23,12 @@ export class AgriculturalCardComponent implements OnInit {
   ngOnInit(): void {
     this.http
       .get(
-        this.baseApiUrl + '/fruit/farmer/' + AgriculturalCardComponent.idFarmer,
+        this.baseApiUrl + '/fruit/farmer/' + AgriculturalCardComponent.idFarmer +'?no=0&limit=100',
         { withCredentials: true }
       )
       .subscribe((res: any) => {
         this.products = res.contents;
+        this.size = res.contents.length;
         console.log(this.products);
       });
   }

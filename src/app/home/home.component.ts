@@ -24,6 +24,7 @@ export class HomeComponent implements OnInit {
       (res:any) => {
         this.message = `Hi ${res.firstName} ${res.lastName} , Welcome to Farmhome!`;
         console.log(res.id);
+        localStorage.setItem("idUser", res.id.toString());
       },
       err => {
         alert ('You are not login, please login first');

@@ -21,6 +21,7 @@ export class HistoryTableComponent implements OnInit {
   orders: Order[] = [];
 
   ngOnInit(): void {
+    console.log(HistoryTableComponent.idFarmer)
     this.http
       .get(
         this.baseApiUrl + '/history/user/' + HistoryTableComponent.idFarmer,

@@ -25,7 +25,7 @@
         <tr *ngFor="let o of orders.slice().reverse() let i = index">
           <td>{{o.id}}</td>
           <td>{{o.merchant.firstName}} {{o.merchant.lastName}}</td>
-          <td>Dĩ An, Bình Dương</td>
+          <td>{{o.merchant.location.address}}, {{o.merchant.location.ward.name}}, {{o.merchant.location.ward.district.name}}, {{o.merchant.location.ward.district.province.name}}</td>
           <td>{{o.merchant.phone}}</td>
           <td>{{o.fruit.name}} </td>
           <td>{{o.amount}}</td>

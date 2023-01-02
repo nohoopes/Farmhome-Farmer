@@ -11,35 +11,33 @@
         <div class="user-details">
           <div class="input-box">
             <span class="details">Name</span>
-            <input type="text" placeholder="Enter name" value="{{p_product}}" required  />
+            <input type="text" placeholder="Enter name" value="{{p_product}}" required (input)="changeName($event.target.value)" />
           </div>
           <div class="input-box">
             <span class="details">Weight</span>
-            <input type="text" placeholder="Enter weight" required  />
+            <input type="text" placeholder="Enter weight" required  (input)="changeWeight($event.target.value)"/>
           </div>
           <div class="input-box">
             <span class="details">Season</span>
-            <input type="text" placeholder="Spring/Summer/Autumn/Winter"  />
+            <input type="text" placeholder="Spring/Summer/Autumn/Winter" value="{{p_season}}" required (input)="changeSeason($event.target.value)" />
           </div>
 
           <div class="input-box">
             <span class="details">Date</span>
             <input type="text" placeholder="yyyy-mm-dd" required (input)="changeDate($event.target.value)"  />
           </div>
-          <div>
+          <div class="upload-image" style="padding: 40px; margin: 10px 0px; border: 1px solid; width: 100%;">
             <div class="form-group">
               <input type="file" (change)="uploadFile($event)">
             </div>
-            <div class="predict-box">
+            <div class="predict-box" >
               <h4>Product: {{p_product}}</h4>
               <h4>Confidence: {{p_confidence}}</h4>
-              <button mat-raised-button color="accent" (click)="predictForm()">Predict</button>
+              <button mat-raised-button color="accent" style="width: 100%;" (click)="predictForm()">Predict</button>
             </div>
           </div>
         </div>
-        <div class="button" (click)="addProduct()">
-          <input value="Submit" style="text-align:center !important" />
-        </div>
+        <button style="width: 100%; height: 100%; font-size: 20px" mat-raised-button color="primary" (click)="addProduct()">Submit</button>
       </div>
     </div>
   </div>

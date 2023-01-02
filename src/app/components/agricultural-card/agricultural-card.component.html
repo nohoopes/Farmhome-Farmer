@@ -1,26 +1,47 @@
 <head>
-    <!--Google Font-->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <!--Google Font-->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
 </head>
-<body>
-   
-    <div class="cards">
-        <ng-container *ngFor="let p of products let i = index">
-        <div class="card">
-            <div class="container">
-                <img src={{p.images[0].url}}>
-            </div>
-            <div class="details">
-                <h3>#{{p.id}}</h3>
-                <h3>{{p.name}}</h3>
-                <p>Having: {{p.weight}}{{p.unit}}</p>
-                <p>Remaining: {{p.remainingWeight}}{{p.unit}}</p>
-                <p>{{p.season}}</p>
-                <p>{{p.date}}</p>
-                <button type="button" id="delete-btn" mat-button color="accent" float="right" (click)="deleteProduct(p.id.toString())">Delete</button>
-            </div>
-        </div>
-    </ng-container>
-    </div>
+<div style="text-align:right; margin-bottom: 5px;">
+    <button
+  mat-raised-button
+  (click)="ngOnInit()"
+  color="warn"
+  style="margin-bottom: 10px; padding: 5px 10px; position: static"
+>
+  Update Products Status ({{size}})
+</button>
+</div>
 
+<body>
+  <div class="cards">
+    <ng-container *ngFor="let p of products; let i = index">
+      <div class="card">
+        <div class="container">
+          <img src="{{ p.images[0].url }}" />
+        </div>
+        <div class="details">
+          <h3>#{{ p.id }}</h3>
+          <h3>{{ p.name }}</h3>
+          <p>Having: {{ p.weight }}{{ p.unit }}</p>
+          <p>Remaining: {{ p.remainingWeight }}{{ p.unit }}</p>
+          <p>{{ p.season }}</p>
+          <p>{{ p.date }}</p>
+          <button
+            type="button"
+            id="delete-btn"
+            mat-button
+            color="accent"
+            float="right"
+            (click)="deleteProduct(p.id.toString())"
+          >
+            Delete
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
 </body>

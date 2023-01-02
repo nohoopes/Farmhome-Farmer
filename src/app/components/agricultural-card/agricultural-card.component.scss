@@ -9,15 +9,16 @@ body {
 	font-family: 'Poppins',sans-serif;
 	border-radius: 10px;
 	background: transparent;
+	overflow-x: auto;
 }
 .cards {
 	display: flex;
     justify-content: space-between;
     margin-left: -1rem;
-    flex-flow: row wrap;
 }
 .card {
 	flex: 1 0;
+	width: 25%;
     background-color: green;
     margin-left: 1rem;
     margin-bottom: 1rem;

@@ -26,6 +26,7 @@ export class OrderTableComponent implements OnInit {
   orders: Order[] = [];
 
   ngOnInit(): void {
+    console.log(OrderTableComponent.idFarmer)
     this.http
       .get(
         this.baseApiUrl + '/order/farmer/' + OrderTableComponent.idFarmer,
